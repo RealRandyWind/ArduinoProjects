@@ -17,5 +17,9 @@
   <ItemGroup>
     <None Include="CameraFocusRingControl.ino" />
   </ItemGroup>
- 
+  <ItemGroup>
+    <ClInclude Include="__vm\.CameraFocusRingControl.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
