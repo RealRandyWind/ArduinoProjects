@@ -23,7 +23,7 @@
 
 #define ONE 1
 #define CSHIFT(DIR, STATE) ((DIR) ? ((STATE) << ONE | (STATE) >> PALLM) : ((STATE) >> ONE | (STATE) << PALLM)) & PALLM
-#define JNORMALIZE(VALUE)  JNORM - ((VALUE) % (JREF + 1)) * (JNORM / JREF) + JMIN
+#define JMAP(VALUE)  JNORM - ((VALUE) % (JREF + 1)) * (JNORM / JREF) + JMIN
 
 uint8_t state = ONE;
 
@@ -42,5 +42,5 @@ void loop() {
 	digitalWrite(P3, P3M & state);
 	digitalWrite(P4, P4M & state);
 	state = CSHIFT(JREF < vX, state);
-	delay(JNORMALIZE(vX));
+	delay(JMAP(vX));
 }
